@@ -1,25 +1,18 @@
-import express, { Request, Response } from "express";
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
+import fs from 'fs';
 
-dotenv.config();
+// ⚠️ Verificar si `.env` realmente existe antes de cargarlo
+if (fs.existsSync('.env')) {
+  console.log("✅ Archivo .env detectado, cargando variables...");
+  dotenv.config();
+} else {
+  console.error("❌ Error: No se encontró el archivo .env en el proyecto.");
+  process.exit(1);
+}
 
-const app = express();
-const port = process.env.PORT || 3000;
-
-// Configura EJS como el motor de plantillas
-app.set("view engine", "ejs");
-app.set("views", "./src/views");
-
-// Ruta para la página inicial
-app.get("/", (req: Request, res: Response) => {
-    res.render("index", {
-        nombre: "Luisa Mota",
-        cedula: "31081118",
-        seccion: "3"
-    });
-});
-
-// Inicia el servidor
-app.listen(port, () => {
-    console.log(`Servidor corriendo en http://localhost:${port}`);
-});
+// Mostrar las variables de entorno para diagnóstico
+console.log("🔍 Variables de entorno detectadas:");
+console.log("PORT:", process.env.PORT);
+console.log("DATABASE_URL:", process.env.DATABASE_URL);
+console.log("DB_USER:", process.env.DB_USER);
+console.log("DB_PASS:", process.env.DB_PASS);
