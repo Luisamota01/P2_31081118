@@ -18,7 +18,7 @@ console.log('PASS:', process.env.PASS);
 
 // Configuración del servidor y puerto
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 // Ruta de prueba para verificar el servidor
 app.get('/', (req, res) => {
