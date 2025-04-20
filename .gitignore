@@ -1,0 +1,34 @@
+# Ignorar archivos de entorno
+.env
+.env.local
+.env.production
+.env.development
+
+# Ignorar dependencias de Node.js
+node_modules/
+
+# Ignorar compilaciones y archivos temporales
+dist/
+build/
+.tmp
+.cache
+
+# Ignorar configuraciones del editor
+.vscode/
+.idea/
+.DS_Store
+
+# Ignorar logs y errores
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+logs/
+*.log
+
+# Ignorar archivos de cobertura de pruebas
+coverage/
+*.lcov
+
+# Ignorar configuraciones específicas de Git
+.gitignore
+.gitconfig
