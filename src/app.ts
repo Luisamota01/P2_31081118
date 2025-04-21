@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 10000;
+const PORT = Number(process.env.PORT) || 10000;
 const DB_URL = process.env.DATABASE_URL;
 
 console.log("Intentando conectar a MongoDB...");
